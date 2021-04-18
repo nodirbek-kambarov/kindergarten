@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block courses %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<style>
+        img {
+            padding: 4px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        img:hover {
+            opacity: 0.6;
+            filter: alpha(opacity=60);
+        }
+    </style>
+    <!-- Home -->
+
+    <div class="home">
+        <div class="home_background parallax_background parallax-window" data-parallax="scroll"
+             data-image-src="{% static 'images/courses.jpg' %}" data-speed="0.8"></div>
+        <div class="home_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content text-center">
+                            <div class="home_title">Gallereya</div>
+                            <div class="breadcrumbs">
+                                <ul>
+                                    <li><a href="/">Bosh sahifa</a></li>
+                                    <li>Gallereya</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="teachers">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="teachers_title text-center">Gallereya</div>
+                </div>
+            </div>
+
+            <div class="row teachers_row">
+                {% for slide in gallery_list %}
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="teacher">
+
+
+                            <a data-fancybox="gallery" href="{{ slide.photo.url }}">
+                                <img class="img-fluid" src="{{ slide.photo.url }}" alt="...">
+                            </a>
+
+                            <div class="teacher_body text-center">
+
+                                <div class="teacher_social">
+                                    <ul>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

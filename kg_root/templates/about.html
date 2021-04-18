@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block about %}
+
+
+<!-- Home -->
+
+<div class="home">
+    <!-- Background image artist https://unsplash.com/@thepootphotographer -->
+    <div class="home_background parallax_background parallax-window" data-parallax="scroll"
+         data-image-src="{%static 'images/about.jpg'%}" data-speed="0.8"></div>
+    <div class="home_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="home_content text-center">
+                        <div class="home_title">Biz haqimizda</div>
+                        <div class="breadcrumbs">
+                            <ul>
+                                <li><a href="/">Bosh Sahifa</a></li>
+                                <li>Biz haqimizda</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Teachers -->
+
+<div class="teachers">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="teachers_title text-center">Jamoamiz xodimlari</div>
+            </div>
+        </div>
+        <div class="row teachers_row">
+            {% for slide in workers_list %}
+            <!-- Teacher -->
+            <div class="col-lg-4 col-md-6">
+                <div class="teacher">
+                    <div class="teacher_image"><img src="{{slide.workers_photo.url}}"
+                                                    alt="https://unsplash.com/@nickkarvounis"></div>
+                    <div class="teacher_body text-center">
+                        <div class="teacher_title"><a href="#">{{slide.workers_name}}</a></div>
+
+                        <div class="teacher_social">
+                            <ul>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+
+
+        </div>
+
+    </div>
+</div>
+
+<!-- Footer -->
+{% endblock %}

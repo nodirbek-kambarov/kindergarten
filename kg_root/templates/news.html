@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block news %}
+
+
+    <!-- Home -->
+
+    <div class="home">
+        <!-- Background image artist https://unsplash.com/@thepootphotographer -->
+        <div class="home_background parallax_background parallax-window" data-parallax="scroll"
+             data-image-src="{% static 'images/news.jpg' %}" data-speed="0.8">
+
+
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content text-center">
+                                <div class="home_title">Yangiliklar</div>
+                                <div class="breadcrumbs">
+                                    <ul>
+                                        <li><a href="/">Bosh sahifa</a></li>
+                                        <li>Yangiliklar</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% for slide in object_list %}
+        <div class="container"><br>
+            <div class="row">
+                <div class="col-lg-8 ftco-animate">
+                    <h2 class="mb-3"> {{ slide.news_title }} </h2>
+                    <p>
+                        <img src="{{ slide.news_photo.url }}" alt="" class="img-fluid">
+                    </p>
+                    <div class="news_post_text">
+                        <p> {{ slide.news_text|safe|linebreaks|truncatewords:30 }}
+
+                        <p>{{ slide.news_date }}</p>
+                    </div>
+                    <div class="news_post_link"><a href="{% url 'news:get' pk=slide.pk %}">Read More</a></div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+    {% endfor %}
+
+
+
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+
+                    <a class="page-link" href="?page=1">first</a>
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}" tabindex="-1">Previous</a>
+
+            {% endif %}
+            {% if page_obj.has_next %}
+
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last </a>
+
+            {% endif %}
+        </ul>
+    </nav>
+
+{% endblock %}

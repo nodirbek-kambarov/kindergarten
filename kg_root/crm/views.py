@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from crm.models import Order
+from .models import Order
 from kg.sendmessage import sendTelegram
 
 

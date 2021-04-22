@@ -3,175 +3,176 @@
 {% block index %}
 
 
-    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+<link rel="stylesheet" href="{% static 'styles/style.css' %}">
 
-    <style>
-
-
-        .heading a:hover {
-            color: #0d8ecf;
-        }
-
-        .heading, .text_info {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 2; /* number of lines to show */
-            -webkit-box-orient: vertical;
-        }
-
-        .text_info {
-            -webkit-line-clamp: 3;
-        }
-    </style>
-
-    <!-- Home -->
-    {% include 'carusel.html ' %}
+<style>
 
 
-    <!-- Featured Course -->
+    .heading a:hover {
+        color: #0d8ecf;
+    }
 
-    <div class="featured">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <!-- Home Slider Nav -->
+    .heading, .text_info {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* number of lines to show */
+        -webkit-box-orient: vertical;
+    }
+
+    .text_info {
+        -webkit-line-clamp: 3;
+    }
+</style>
+
+<!-- Home -->
+{% include 'carusel.html ' %}
 
 
-                </div>
+<!-- Featured Course -->
+
+<div class="featured">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <!-- Home Slider Nav -->
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Events -->
+
+<div class="courses">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+
             </div>
         </div>
 
-    </div>
+        <div class="row">
+            <div class="col">
+                <div class="teachers_title text-center">Bizning bog'chamiz haqida</div>
+                <br>
+                <div class="section">
+                    <div class="content-wrap">
+                        <div class="container"><br>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <img src="http://172.kindergarten.napa.uz/public/images/photo_3.jpg" alt=""
+                                         class="img-fluid img-border mb-3">
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <h2 class="section-heading">
+                                        Biz haqimizda
+                                    </h2>
+                                    <p>Teritatis et quasi architecto. Sed ut perspiciatis unde omnis iste natus
+                                        error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam,
+                                        eaque ipsa quae ab illo invent. Sed ut perspiciatis unde omnis iste natus
+                                        error sitdolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                                        euismod. Praesent interdum est gravida vehicula est node maecenas loareet
+                                        morbi a dosis luctus novum est praesent. Magna est consectetur interdum
+                                        modest dictum.</p>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                        dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+                                        invent. </p>
 
-
-    <!-- Events -->
-
-    <div class="courses">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 offset-lg-1">
-
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <div class="teachers_title text-center">Bizning bog'chamiz haqida</div>
-                    <br>
-                    <div class="section">
-                        <div class="content-wrap">
-                            <div class="container"><br>
-                                <div class="row">
-                                    <div class="col-sm-12 col-md-12 col-lg-6">
-                                        <img src="http://172.kindergarten.napa.uz/public/images/photo_3.jpg" alt=""
-                                             class="img-fluid img-border mb-3">
-                                    </div>
-                                    <div class="col-sm-12 col-md-12 col-lg-6">
-                                        <h2 class="section-heading">
-                                            Biz haqimizda
-                                        </h2>
-                                        <p>Teritatis et quasi architecto. Sed ut perspiciatis unde omnis iste natus
-                                            error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam,
-                                            eaque ipsa quae ab illo invent. Sed ut perspiciatis unde omnis iste natus
-                                            error sitdolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                                            euismod. Praesent interdum est gravida vehicula est node maecenas loareet
-                                            morbi a dosis luctus novum est praesent. Magna est consectetur interdum
-                                            modest dictum.</p>
-                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                                            dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                                            invent. </p>
-
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- News -->
-                    <div class="courses">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-10 offset-lg-1">
+                <!-- News -->
+                <div class="courses">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 offset-lg-1">
 
-                                </div>
                             </div>
+                        </div>
 
-                            <div class="row">
-                                <div class="col">
-                                    <div class="teachers_title text-center">Yangiliklar</div>
-                                    <br>
+                        <div class="row">
+                            <div class="col">
+                                <div class="teachers_title text-center">Yangiliklar</div>
+                                <br>
 
-                                    <div class="container"><br>
+                                <div class="container"><br>
 
-                                        <div class="row" id="news-list">
-                                            {% for item in news_list %}
-                                                <div class="col-md-6 col-lg-4 ftco-animate">
-                                                    <div class="blog-entry">
-                                                        <a href="{% url 'news:get' pk=item.pk %}"
-                                                           class="block-20 d-flex align-items-end"
-                                                           style="background-image: url('{{ item.news_photo.url }}');">
-                                                            <div class="meta-date text-center p-2"
-                                                                 style="color: white;">
-                                                                {{ item.news_date }}
-                                                            </div>
-                                                        </a>
-                                                        <div class="text bg-white p-4">
-                                                            <h3 class="heading"><a
-                                                                    href="{% url 'news:get' pk=item.pk %}">
-                                                                {{ item.news_title }} </a></h3>
-                                                            <p class="text_info"> {{ item.news_text }} </p>
-                                                        </div>
+                                    <div class="row" id="news-list">
+                                        {% for item in news_list %}
+                                        <div class="col-md-6 col-lg-4 ftco-animate">
+                                            <div class="blog-entry">
+                                                <a href="{% url 'news:get' pk=item.pk %}"
+                                                   class="block-20 d-flex align-items-end"
+                                                   style="background-image: url('{{ item.news_photo.url }}');">
+                                                    <div class="meta-date text-center p-2"
+                                                         style="color: white;">
+                                                        {{ item.news_date }}
                                                     </div>
-                                                </div>
-
-
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-
-
-                                    <!-- Courses -->
-
-                                    <div class="courses">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-lg-10 offset-lg-1">
-
+                                                </a>
+                                                <div class="text bg-white p-4">
+                                                    <h3 class="heading"><a
+                                                            href="{% url 'news:get' pk=item.pk %}">
+                                                        {{ item.news_title }} </a></h3>
+                                                    <p class="text_info"> {{ item.news_text }} </p>
                                                 </div>
                                             </div>
+                                        </div>
 
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="teachers_title text-center">Bizning jamoa</div>
-                                                    <!-- Courses Slider -->
-                                                    <div class="courses_slider_container">
-                                                        <div class="owl-carousel owl-theme courses_slider">
-                                                            {% for slide in workers_list %}
 
-                                                                <!-- Slider Item -->
-                                                                <div class="owl-item">
-                                                                    <div class="course">
-                                                                        <div class="course_image"><img
-                                                                                src="{{ slide.workers_photo.url }}"
-                                                                                alt=""></div>
-                                                                        <div class="course_body">
-                                                                            <div class="course_header d-flex flex-row align-items-center justify-content-start">
-                                                                            </div>
-                                                                            <div class="course_title">
-                                                                                <h3>{{ slide.workers_name }}</h3></div>
-                                                                            <div class="teacher_subtitle">{{ slide.workers_position }}</div>
-                                                                            <div class="course_footer d-flex align-items-center justify-content-start">
-                                                                            </div>
-                                                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+
+                                <!-- Courses -->
+
+                                <div class="courses">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-10 offset-lg-1">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="teachers_title text-center">Bizning jamoa</div>
+                                                <!-- Courses Slider -->
+                                                <div class="courses_slider_container">
+                                                    <div class="owl-carousel owl-theme courses_slider">
+                                                        {% for slide in workers_list %}
+
+                                                        <!-- Slider Item -->
+                                                        <div class="owl-item">
+                                                            <div class="course">
+                                                                <div class="course_image"><img
+                                                                        src="{{ slide.workers_photo.url }}"
+                                                                        alt=""></div>
+                                                                <div class="course_body">
+                                                                    <div class="course_header d-flex flex-row align-items-center justify-content-start">
+                                                                    </div>
+                                                                    <div class="course_title">
+                                                                        <h3>{{ slide.workers_name }}</h3></div>
+                                                                    <div class="teacher_subtitle">{{
+                                                                        slide.workers_position }}
+                                                                    </div>
+                                                                    <div class="course_footer d-flex align-items-center justify-content-start">
                                                                     </div>
                                                                 </div>
-
-                                                            {% endfor %}
-
+                                                            </div>
                                                         </div>
 
+                                                        {% endfor %}
+
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -184,7 +185,7 @@
             </div>
         </div>
     </div>
-
+</div>
 
 
 {% endblock %}
